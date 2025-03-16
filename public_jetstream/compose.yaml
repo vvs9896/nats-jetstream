@@ -1,0 +1,11 @@
+version: "3"
+services:
+  nats:
+    image: nats:2.9.0
+    command: "-js -c /nats.conf"
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - ./nats.conf:/nats.conf
+      - ./certs:/certs
